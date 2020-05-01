@@ -60,9 +60,8 @@
 			<input type="password" name="mdp" placeholder="Mot de passe" required>
 			<input style='margin-left: 40%;' type="submit" value="Confirmer">
 
-			<p style='border-bottom: 2px solid #570342; border-top: 2px solid #570342;'>Je suis enseignant.Rendez vous ici <a href='../index.html'> trombinoscope </a>('J'ai perdu mon mot de passe. Comment faire?')</p>
 			<p 
-			style='border-bottom: 2px solid #570342;'>Je suis <a href='mailto:aklimokrane048@gmail.com'>administratif / enseignant(e)</a>
+			style='border-bottom: 2px solid #570342;'>Je suis <a href='#'>administratif / enseignant(e)</a>
 			</p>
 
 			
