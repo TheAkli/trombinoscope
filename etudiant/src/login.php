@@ -26,7 +26,7 @@
 		<input style='margin-left: 40%;' type="submit" value="Confirmer">
 
 		<p 
-		style='border-bottom: 2px solid #570342;'>Pas encore membres ? <a href='login.php'>s'inscrire</a>
+		style='border-bottom: 2px solid #570342;'>Pas encore membres ? <a href='index.php'>S'inscrire</a>
 		</p>
 	</form>
 </div>
