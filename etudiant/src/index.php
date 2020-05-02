@@ -61,7 +61,7 @@
 			<input style='margin-left: 40%;' type="submit" value="Confirmer">
 
 			<p 
-			style='border-bottom: 2px solid #570342;'>Je suis <a href='#'>administratif / enseignant(e)</a>
+			style='border-bottom: 2px solid #570342;'>Vous etes déja membres ? <a href='login.php'>Se connecter</a>
 			</p>
 
 			
