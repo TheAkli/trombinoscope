@@ -15,6 +15,9 @@
 	<a href="https://www.u-cergy.fr/fr/index.html"><img src="../images/logo.jpg" alt="Cergy université" height="100" width="140"></a>
 	</header>
 
+
+<div class="login">
+	<h2 style='text-align: center; border-bottom: 2px solid #570342;'>Login</h2>
 	<form action='./connexion.php' method='POST' id='connect'>
 		<label for='email'>Votre Email :</label>
 		<input type="email" name="email" placeholder="Adresse mail" required><br>
@@ -26,5 +29,6 @@
 		style='border-bottom: 2px solid #570342;'>Se connecter <a href='login.php'>administratif / enseignant(e)</a>
 		</p>
 	</form>
+</div>
 </body>
 </html>
