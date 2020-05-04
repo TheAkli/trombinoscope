@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['connected'])) {
 function GenereKeys($length=10){
     $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $string = '';
@@ -27,7 +27,7 @@ if (isset($_POST["formtype"])){
 					$ExistKeys = $t[1];
 				}
 			}
-			if ($_POST["email"]==$_SESSION['login']){
+			if ($_POST["email"]==$_SESSION['connected']){
 				if( $doesUserExist == TRUE ){
 					$message = "Votre clé est ".$ExistKeys;;
 
@@ -85,8 +85,8 @@ if (isset($_POST["formtype"])){
      ?>
 	<p>Entrer votre mail:</p>
 	<input type="e-mail" name="email" value="<?php 
-	if (isset($_SESSION['login'])){
-		echo$_SESSION['login'];}?>"/>
+	if (isset($_SESSION['connected'])){
+		echo$_SESSION['connected'];}?>"/>
 	</p>
 	<input type="hidden" name="formtype" value="api" />
 	<input type="submit" value="valider" class="button" />
@@ -94,7 +94,6 @@ if (isset($_POST["formtype"])){
 </form>
 
 <footer>
-    <p>Copyright © Wasef Alexandra</p>
 </footer>
 </div>
 </body>
@@ -104,5 +103,4 @@ if (isset($_POST["formtype"])){
 else{
 	header('Location: connexion.php');
 }
-?>
 ?>
