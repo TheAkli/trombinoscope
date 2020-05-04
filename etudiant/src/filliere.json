@@ -1,0 +1,38 @@
+{
+    "NomDesFilieres":[
+
+
+        {
+            "Filiere":"L1-MIPI",
+            "groupes":[
+                "G1",
+                "G2"
+            ]
+        },
+		
+        {
+        	"Filiere":"L2-MI",
+            "groupes":[
+                "G1",
+                "G2"
+            ]
+        },
+		
+        {
+        	"Filiere":"LPI-RS",
+            "groupes":[
+                "G1",
+                "G2"
+            ]
+        },
+         {
+        	"Filiere":"LPI-RIWS",
+            "groupes":[
+                "G1",
+                "G2"
+            ]
+        }
+
+    ]
+    
+}

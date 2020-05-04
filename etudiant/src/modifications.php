@@ -6,7 +6,9 @@
 </head>
 <body>
 	<form action='./modif.php' method='POST' id='modif' enctype='multipart/form-data'>
-			<input type="text" name="nom" placeholder="Nom" required><br>
+			<input type="text" name="nom" placeholder="Nom" required value="<?php 
+	if (isset($_SESSION['connected'])){
+		echo$_POST['nom'];}?>"/>><br>
 			<input type="text" name="prenom" placeholder="Prénom" required><br>
 			<input type="email" name="email" placeholder="Adresse mail" required><br>
 			<input type="password" name="mdp" placeholder="Mot de passe" required>

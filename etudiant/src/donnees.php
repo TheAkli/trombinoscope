@@ -19,7 +19,7 @@
 		<table>
 			<tr>
 				<td>
-					<img src= <?php echo './files/' . $_SESSION['connected']. '.jpg'; ?> alt="" height="150" width="150">
+					<img src= <?php echo './files/' . $_SESSION['connected']. '.png'; ?> alt="" height="150" width="150">
 				</td>
 			</tr>
 		</table>
