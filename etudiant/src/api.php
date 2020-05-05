@@ -29,7 +29,7 @@ if (isset($_POST["formtype"])){
 			}
 			if ($_POST["email"]==$_SESSION['connected']){
 				if( $doesUserExist == TRUE ){
-					$message = "Votre clé est ".$ExistKeys;;
+					$message = "Votre clé est : ".$ExistKeys;;
 
 				}
 				else{
@@ -38,7 +38,7 @@ if (isset($_POST["formtype"])){
 					$fichier_end = fopen($fichier,"a");
 					fwrite($fichier_end,$email.",".$keys."\n");
 					fclose($fichier_end);
-					$message= "Votre clé est ".$keys;
+					$message= "Votre clé est : ".$keys;
 				}
 			}
 			else {
@@ -61,20 +61,115 @@ if (isset($_POST["formtype"])){
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     </meta>
 	<title>Trombinoscope-API</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css"></link>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<style>
+		input[type="text"], input[type="password"]{
+			border: none;
+			border-bottom: 2px solid black;
+			margin-top: 3%;
+		}
+		input[type="text"]:focus{
+			border-bottom-color: dodgerblue;
+		}
+		input[type="password"]:focus{
+			border-bottom-color: dodgerblue;
+		}
+		input[type="submit"]{
+			border-radius: 0px 0px 40px 0px;
+			border-color: black;
+			font-weight: bold;
+		}
+		input:required{
+			background: url(../images/asterisk.png) right center no-repeat transparent;
+		}
+		input:focus:valid{
+			border-bottom-color: green;
+			background: url(../images/valid.png) right center no-repeat transparent;
+		}
+		input:focus:invalid{
+			border-bottom-color: red;
+			background: url(../images/invalid.png) right center no-repeat transparent;
+		}
+		legend{
+			background-color: #A5A5A5; 
+			border: 1px solid black;
+			font-weight: bold;
+		}
+		label{
+			padding: 3px;
+			color: white;
+			border-radius: 600px 100px 100px 300px;
+			border-color: white;
+			background-color: #570342;
+		}
+		h2{
+ 			color: #570342;
+ 			text-align: center;
+ 			font-size: 25pt;
+		}
+		h3{
+			color: #570342;
+			margin-left: 50px;
+		}
+		ul{
+			list-style-type: none;
+		}
+
+		.listButtons li {
+			display: inline-block;
+			width: 150px;
+			color: #570342;
+			font-weight: bold;
+			font-size: 18pt;
+		}
+		.blockRight{
+			float: right;
+			width: 100%;
+			height: 400px;
+			overflow: auto;
+			border: 2px solid #570342;
+		}
+		.blockLeft{
+			float: left;
+			width: 52%;
+			height: 400px;
+			overflow: auto;
+			background-color: #E6E6E6;
+		}
+		footer{
+			position: absolute;
+			margin-top: 415px; 
+			width: 99%;
+		}
+</style>
 </head>
 <body>
-<div id="carte">
-<div class="navbar">
-    <h1>Trombinoscope-API</h1>
-     <a href="deconnexion.php">Déconnexion</a>
-     <a href="api.php">Cle API</a>
-     <a href="acceuil.php">Profil</a>
-     <a href="index.php">Documentation</a>
-                
- </div>
+
+<header>
+	<nav>
+		<ul>
+
+	    <li>  <a href="deconnexion.php">Déconnexion</a> </li>
+     	<li>  <a href="api.php">Cle API</a></li>
+    	<li><a href="donnees.php">Profil</a> </li> 
+    	<li>  <a href="http://etu-cergy.alwaysdata.net/">acceuil</a></li>
+
+		</ul>
+		
+	</nav>
+     
+</header>
+    
+
+		<section class="blockLeft">
+				<h2 >Générer ou retrouver votre clé API </h2>
+
+
+		<fieldset style="background-color: white; color: black;">
+			<legend style="color: black;">vos données personelles :</legend>
+	
+ 
 <form action="./api.php" method="post" enctype="multipart/form-data" type="api" class="cle_api">
-	<h2 id="resu">Générer ou retrouver votre clé API </h2>
 	<?php  
     if (isset($message)){
         echo '<div id="message">'.$message."</div>";
@@ -93,9 +188,15 @@ if (isset($_POST["formtype"])){
 
 </form>
 
+</fieldset>
+
+	</section>
+
+
 <footer>
+	Mokrane Akli 
 </footer>
-</div>
+
 </body>
 </html>
 <?php

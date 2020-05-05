@@ -75,8 +75,7 @@ body{
 	background-color: white;
 	font-weight: bold;
 }
-.login input:required{
-	background: url(../images/asterisk.png) right center no-repeat transparent;
+
 }
 .login input:focus:valid{
 	border-bottom-color: green;
