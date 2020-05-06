@@ -18,6 +18,8 @@ function api($classe,$groupe){
             $tab[$i]['email']=$ligne[2];
             $tab[$i]['classe']=$ligne[5];
             $tab[$i]['groupe']=$ligne[6];
+			$tab[$i]['imgPerso']=$ligne[8];
+
         }
         else{
             continue;

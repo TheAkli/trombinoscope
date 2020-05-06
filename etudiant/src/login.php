@@ -1,3 +1,20 @@
+<?php
+
+function logs(){
+  $date = "[".date('d')."/".date('m')."/".date('y')."] ";
+  $hour = "[".date('H').":".date('i').":".date('s')."] ";
+  $ip = $_SERVER['REMOTE_ADDR'];
+  $url = $_SERVER['PHP_SELF'];
+  $answer = $date.$hour.$ip." connecte to ".$url."\n";
+
+  $files = fopen('./data/logs/logs.txt', 'a+');
+  fputs($files,$answer);
+  fclose($files);
+}
+logs();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

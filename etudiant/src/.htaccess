@@ -1,11 +1,4 @@
-<FilesMatch "\.(txt|csv)$">
-Order allow,deny
-Deny from all
-
-</FilesMatch>
-
-RewriteEngine on
-
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(([A-Za-z0-9\-_]+/)*[A-Za-z0-9\-_]+)?$ $1.php
+AuthUserFile \www\src\.htpasswd
+AuthName "Accès protégé"
+AuthType Basic
+Require valid-user
