@@ -101,6 +101,8 @@
 	<nav>
 		<ul>
 			<li><a href="deconnexion.php"> Se déconnecter </a> </li>
+			  <li>  <a href="index.php">Acceuil</a>  </li>
+
 			
 		</ul>
 	</nav>
@@ -110,10 +112,61 @@
 		<section >
 
 		<fieldset >
-			<legend style="color: black;">vos données personelles :</legend>
+			<legend style="color: black;">trombinoscope :</legend>
 	
 
 		<p>Vous etes connecté en tant que <?php echo  $_SESSION['connected']; ?> </p>
+
+			</div>
+
+    <li><a href="#">L1-MIPI</a></li>
+      <ul>
+      <li><a href="donnees.php?classe=L1-MIPI&groupe=G1">MIPI-Groupe1</a></li>
+      <li><a href="donnees.php?classe=L1-MIPI&groupe=G2">MIPI-Groupe2</a></li>
+    
+      </ul>
+    <li><a href="#">L2-MI</a></li>
+      <ul>
+		<li><a href="donnees.php?classe=L2-MI&groupe=G1">L2-MI-Groupe1</a></li>
+		<li><a href="donnees.php?classe=L2-MI&groupe=G2">L2-MI-Groupe2</a></li>
+      </ul>
+	  
+    <li><a href="#">LPI-RS</a></li>
+      <ul>
+      <li><a href="donnees.php?classe=LP-RS&groupe=G1">LPI-RS-Groupe1</a></li>
+      <li><a href="donnees.php?classe=LP-RS&groupe=G2">LPI-RS-Groupe2</a></li>
+      </ul>
+    <li><a href="#">LPI-RIWS</a></li>
+      <ul>
+      <a href="donnees.php?classe=LPI-RIWS&groupe=G1">LPI-RIWS-Groupe1</a></li>
+      <a href="donnees.php?classe=LPI-RIWS&groupe=G2">LPI-RS-Groupe2</a></li>
+  </ul>
+     
+      
+<div class="main">
+  <h1>Trombinoscope</h1>
+  <div id='imprime'>
+  <h2>Etudiants de <?php echo $_GET['classe']." en ". $_GET['groupe'] ?></h2>
+  <?php
+  if(isset($_GET['classe'])and isset($_GET['groupe'])){
+    $recup_data = file_get_contents('http://etu-cergy.alwaysdata.net/src/createApi.php?classe='.$_GET['classe'].'&groupe='.$_GET['groupe']);
+    $data = json_decode($recup_data,true);
+    //var_dump($data);
+    $number = count($data["etudiant"]);
+    for ($i=0; $i <$number ; $i++) {
+        echo "<div class='card'>";
+          echo "<img src=".$data["etudiant"][$i]['imgPerso'].">";
+          echo "<div class='container'>";
+            echo "<p> ".$data["etudiant"][$i]['nom']."  ".$data["etudiant"][$i]['prenom']."</p>";
+          echo"</div>";
+        echo "</div>";  
+    }
+    
+  }
+?>
+</div>
+
+
 
 	</fieldset>
 
@@ -121,7 +174,6 @@
 
 
 
-	</div>
 	
 </body>
 </html>
