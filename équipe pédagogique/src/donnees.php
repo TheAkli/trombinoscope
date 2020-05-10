@@ -145,7 +145,7 @@
       
 <div class="main">
   <h1>Trombinoscope</h1>
-  <div id='imprime'>
+  
   <h2>Etudiants de <?php echo $_GET['classe']." en ". $_GET['groupe'] ?></h2>
   <?php
   if(isset($_GET['classe'])and isset($_GET['groupe'])){
@@ -165,6 +165,22 @@
   }
 ?>
 </div>
+
+</div>
+<script>
+function printContent(element){
+  var restorepage = document.body.innerHTML;
+  var printcontent = document.getElementById(element).innerHTML;
+  document.body.innerHTML = printcontent;
+  window.print();
+  document.body.innerHTML = restorepage;
+}
+
+</script>
+<div id="center">
+<button onclick="printContent('imprime')">Imprimer</button>
+</div>
+
 
 
 

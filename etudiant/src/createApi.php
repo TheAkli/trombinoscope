@@ -29,29 +29,6 @@ function api($classe,$groupe){
     return($etu);
 }
 
-function jason($tab){
-    return json_encode($tab);
-}
-function ApiCle($verif){
-    $RecupCle=file('keys.csv');
-    $found=FALSE;
-    for($i=0;$i <sizeof($RecupCle);$i++){
-        $ligne=explode(";", $RecupCle[$i]);
-        if($verif==$ligne[1]){
-            $found= TRUE;
-        }
-    }
-        return $found;
-}
-$apiCle=$_GET['key'];
-if(ApiCle($apiCle)){
-    $data=api($_GET['classe'], $_GET['groupe']);
-    $json= jason($data);
-}
-else{
-    $erreur="Mauvaise cle";
-    $json=jason($erreur);
-}
-echo $json;
+
 
 ?>
